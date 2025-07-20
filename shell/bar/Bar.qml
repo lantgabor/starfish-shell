@@ -8,6 +8,7 @@ import Quickshell.Wayland
 
 import "components"
 import "components/clock"
+import "components/audio"
 
 PanelWindow {
   id: bar
@@ -50,5 +51,6 @@ PanelWindow {
     spacing: Config.barSpacing
 
     Clock {}
+    AudioSink {}
   }
 }
