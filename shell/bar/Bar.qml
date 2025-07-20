@@ -9,6 +9,7 @@ import Quickshell.Wayland
 import "components"
 import "components/clock"
 import "components/audio"
+import "components/keyboardLayout"
 
 PanelWindow {
   id: bar
@@ -52,5 +53,6 @@ PanelWindow {
 
     Clock {}
     AudioSink {}
+    KeyboardLayout {}
   }
 }
