@@ -6,7 +6,8 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 
-import Components
+import "components"
+import "components/clock"
 
 PanelWindow {
   id: bar
