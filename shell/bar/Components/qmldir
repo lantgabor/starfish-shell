@@ -1,0 +1,4 @@
+module Components
+
+Clock Clock/Clock.qml
+HyprlandWorkspaces HyprlandWorkspaces.qml
