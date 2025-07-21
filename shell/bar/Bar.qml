@@ -54,7 +54,8 @@ PanelWindow {
 
     spacing: Config.barSpacing
 
-    AudioSink {}
+    AudioSourceWidget {}
+    AudioSinkWidget {}
     KeyboardLayout {}
   }
 }

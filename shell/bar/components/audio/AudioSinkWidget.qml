@@ -16,11 +16,11 @@ WrapperItem {
         implicitSize: 28
         source: {
           const icon = () => {
-            if (SystemAudio.muted)
+            if (SystemAudio.sinkMuted || SystemAudio.sinkVolume == 0)
               return "audio-volume-muted";
-            if (SystemAudio.volume < 0.2)
+            if (SystemAudio.sinkVolume < 0.2)
               return "audio-volume-low";
-            if (SystemAudio.volume < 0.5)
+            if (SystemAudio.sinkVolume < 0.5)
               return "audio-volume-medium";
             return "audio-volume-high";
           };
@@ -32,8 +32,8 @@ WrapperItem {
     Slider {
       id: control
       value: {
-        if (!SystemAudio.muted)
-          return SystemAudio.volume;
+        if (!SystemAudio.sinkMuted)
+          return SystemAudio.sinkVolume;
         else
           return 0;
       }
