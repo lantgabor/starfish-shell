@@ -1,30 +1,19 @@
 import QtQuick
 import QtQuick.Layouts
 
-import Quickshell.Hyprland
 import Quickshell.Widgets
+import Quickshell.Hyprland
+
+import "../../Config"
 
 RowLayout {
   id: root
-
-  function workspacesOnScreen() {
-    var workspaces = Hyprland.workspaces;
-    var ret = [];
-
-    for (let i = 0; i < workspaces.values.length; i++) {
-      if (!workspaces.values[i]?.name.startsWith("special") && workspaces.values[i].monitor?.name == screen.name) {
-        ret.push(workspaces.values[i]);
-      }
-    }
-
-    return ret;
-  }
 
   spacing: 4
 
   Repeater {
     id: repeater
-    model: root.workspacesOnScreen(Hyprland.workspaces)
+    model: HyprlandWorkspaces.workspaces ? HyprlandWorkspaces.workspaces[screen.name] : []
 
     WrapperMouseArea {
       id: mouseArea

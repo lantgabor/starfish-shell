@@ -6,10 +6,10 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 
-import "components"
 import "components/clock"
 import "components/audio"
 import "components/keyboardLayout"
+import "components/workspaces"
 
 PanelWindow {
   id: bar
@@ -32,7 +32,7 @@ PanelWindow {
 
     spacing: Config.barSpacing
 
-    HyprlandWorkspaces {}
+    Workspaces {}
   }
 
   RowLayout {
