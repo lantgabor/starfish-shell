@@ -4,12 +4,12 @@ import QtQuick.Layouts
 import Quickshell.Widgets
 import Quickshell.Hyprland
 
-import "../../Config"
+import "root:/config" as C
 
 RowLayout {
   id: root
 
-  spacing: 4
+  spacing: C.Bar.workspaces.buttonSpacing
 
   Repeater {
     id: repeater
@@ -39,29 +39,30 @@ RowLayout {
         property bool hover: false
 
         border {
-          color: "#0A81F5"
-          width: mouseArea.modelData?.active ? 1 : 0
+          color: C.Bar.workspaces.buttonBorderColor
+          width: mouseArea.modelData?.active ? C.Bar.workspaces.activeButtonBorderWidth : C.Bar.workspaces.buttonBorderWidth
         }
-        radius: 8
-        rightMargin: 11
-        leftMargin: 11
-        topMargin: 3
-        bottomMargin: 3
+
+        radius: C.Bar.workspaces.buttonRadius
+        rightMargin: C.Bar.workspaces.buttonRightMargin
+        leftMargin: C.Bar.workspaces.buttonLeftMargin
+        topMargin: C.Bar.workspaces.buttonTopMargin
+        bottomMargin: C.Bar.workspaces.buttonBottomMargin
 
         color: {
           if (mouseArea.modelData?.active) {
-            return "#343434";
+            return C.Bar.workspaces.buttonActiveColor;
           } else {
             if (hover) {
-              return "#64727D";
+              return C.Bar.workspaces.buttonHoverColor;
             }
-            return "#00000000";
+            return C.Bar.workspaces.buttonColor;
           }
         }
 
         Text {
-          font.pixelSize: 13
-          color: "white"
+          font.pixelSize: C.Bar.fontSize
+          color: C.Bar.textColor
           text: mouseArea.modelData?.name ? mouseArea.modelData.name : ""
         }
       }

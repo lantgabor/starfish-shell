@@ -6,6 +6,8 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 
+import "root:/config" as C
+
 import "components/clock"
 import "components/audio"
 import "components/keyboardLayout"
@@ -21,8 +23,8 @@ PanelWindow {
   }
   WlrLayershell.layer: WlrLayer.Bottom
 
-  implicitHeight: Config.barHeight
-  color: Config.barColor
+  implicitHeight: C.Bar.barHeight
+  color: C.Bar.barColor
 
   RowLayout {
     id: barLeft
@@ -31,7 +33,7 @@ PanelWindow {
     anchors.verticalCenter: parent.verticalCenter
     anchors.leftMargin: 3
 
-    spacing: Config.barSpacing
+    spacing: C.Bar.barSpacing
 
     Workspaces {}
   }
@@ -39,7 +41,8 @@ PanelWindow {
   RowLayout {
     id: barCenter
     anchors.centerIn: parent
-    spacing: Config.barSpacing
+
+    spacing: C.Bar.barSpacing
 
     DateWidget {}
     Clock {}
@@ -52,7 +55,7 @@ PanelWindow {
     anchors.verticalCenter: parent.verticalCenter
     anchors.rightMargin: 3
 
-    spacing: Config.barSpacing
+    spacing: C.Bar.barSpacing
 
     AudioSink {}
     KeyboardLayout {}
