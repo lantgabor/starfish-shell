@@ -38,10 +38,11 @@ PanelWindow {
 
   RowLayout {
     id: barCenter
-
     anchors.centerIn: parent
-
     spacing: Config.barSpacing
+
+    DateWidget {}
+    Clock {}
   }
 
   RowLayout {
@@ -53,7 +54,6 @@ PanelWindow {
 
     spacing: Config.barSpacing
 
-    Clock {}
     AudioSink {}
     KeyboardLayout {}
   }
