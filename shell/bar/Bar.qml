@@ -29,6 +29,7 @@ PanelWindow {
 
     anchors.left: parent.left
     anchors.verticalCenter: parent.verticalCenter
+    anchors.leftMargin: 3
 
     spacing: Config.barSpacing
 
@@ -48,6 +49,7 @@ PanelWindow {
 
     anchors.right: parent.right
     anchors.verticalCenter: parent.verticalCenter
+    anchors.rightMargin: 3
 
     spacing: Config.barSpacing
 
