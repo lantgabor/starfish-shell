@@ -8,6 +8,6 @@ WrapperItem {
   Text {
     color: "white"
     font.pixelSize: 13
-    text: SystemDateTime.time
+    text: SystemDateTime.date
   }
 }
