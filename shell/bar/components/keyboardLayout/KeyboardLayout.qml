@@ -9,7 +9,7 @@ WrapperItem {
 
   Text {
     id: text
-    font.pointSize: 13
+    font.pixelSize: 13
     color: "white"
     text: HyprlandKeyboardLayout.keyboardLayout ? HyprlandKeyboardLayout.keyboardLayout : ""
   }
